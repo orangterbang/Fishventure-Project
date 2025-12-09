@@ -4,19 +4,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 1.5f;
-
-    [SerializeField]private float screenHeightUnit;
-    [SerializeField]private float screenWidthUnit;
-    [SerializeField]private float screenWidthUnitHalved;
+    private GameBoundary boundary;
     
     private Vector3 playerPosition;
 
     void Start()
     {
-        //Check the screen width in game position
-        screenHeightUnit = Camera.main.orthographicSize * 2;
-        screenWidthUnit = screenHeightUnit * Camera.main.aspect;
-        screenWidthUnitHalved = screenWidthUnit / 2f;
+        boundary = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameBoundary>();
     }
 
     void Update()
@@ -30,8 +24,8 @@ public class Player : MonoBehaviour
     {
         float inputValue = Input.GetAxisRaw("Horizontal");
 
-        bool outOfBoundMovementLeft = inputValue < 0 && playerPosition.x < -screenWidthUnitHalved;
-        bool outOfBoundMovementRight = inputValue > 0 && playerPosition.x > screenWidthUnitHalved;
+        bool outOfBoundMovementLeft = inputValue < 0 && playerPosition.x < -boundary.screenWidthUnitHalved;
+        bool outOfBoundMovementRight = inputValue > 0 && playerPosition.x > boundary.screenWidthUnitHalved;
         
         if(outOfBoundMovementLeft || outOfBoundMovementRight)
         {
