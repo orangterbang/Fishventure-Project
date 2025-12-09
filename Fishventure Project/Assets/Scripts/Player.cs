@@ -1,11 +1,11 @@
 using TreeEditor;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float speed = 1.5f;
     private GameBoundary boundary;
-    
     private Vector3 playerPosition;
 
     void Start()
@@ -34,5 +34,14 @@ public class Player : MonoBehaviour
 
         Vector3 moveDirection = new Vector3(inputValue, 0f).normalized;
         transform.position += moveDirection * speed * Time.deltaTime;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+            Debug.Log("Player hit obstacle");
+        }
     }
 }
