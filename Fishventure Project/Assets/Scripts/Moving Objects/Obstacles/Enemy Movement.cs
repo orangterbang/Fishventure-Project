@@ -12,6 +12,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateMovement();
+    }
+
+    void UpdateMovement()
+    {
         transform.position += Vector3.up * speed * Time.deltaTime;
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Manager
   - Obstacle
+  - PowerUp
+  - Shield
   layers:
   - Default
   - TransparentFX
