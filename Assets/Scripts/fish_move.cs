@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class fish_move : MonoBehaviour
 {
-    public float speed;
+    public float moveSpeed = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +12,6 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.up * speed * Time.deltaTime;
+        transform.position = transform.position + (Vector3.up * moveSpeed) * Time.deltaTime;
     }
 }
