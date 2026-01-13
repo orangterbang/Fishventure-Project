@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - PowerUp
   - Shield
+  - Pattern Platform
+  - End Platform
   layers:
   - Default
   - TransparentFX

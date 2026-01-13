@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
@@ -49,17 +50,26 @@ public class Player : MonoBehaviour
 
     private void characterMovement()
     {
-        float inputValue = Input.GetAxisRaw("Horizontal");
+        float inputValueX = Input.GetAxisRaw("Horizontal");
+        float inputValueY = Input.GetAxisRaw("Vertical");
 
-        bool outOfBoundMovementLeft = inputValue < 0 && playerPosition.x < -GameBoundary.Instance.screenWidthUnitHalved;
-        bool outOfBoundMovementRight = inputValue > 0 && playerPosition.x > GameBoundary.Instance.screenWidthUnitHalved;
+        bool outOfBoundMovementLeft = inputValueX < 0 && playerPosition.x < -GameBoundary.Instance.screenWidthUnitHalved;
+        bool outOfBoundMovementRight = inputValueX > 0 && playerPosition.x > GameBoundary.Instance.screenWidthUnitHalved;
+
+        bool outOfBoundMovementUp = inputValueY < 0 && playerPosition.y < -GameBoundary.Instance.screenHeightUnitHalved;
+        bool outOfBoundMovementDown = inputValueY > 0 && playerPosition.y > GameBoundary.Instance.screenHeightUnitHalved;
         
         if(outOfBoundMovementLeft || outOfBoundMovementRight)
         {
-            inputValue = 0f;
+            inputValueX = 0f;
         }
 
-        Vector3 moveDirection = new Vector3(inputValue, 0f).normalized;
+        if(outOfBoundMovementUp || outOfBoundMovementDown)
+        {
+            inputValueY = 0f;
+        }
+
+        Vector3 moveDirection = new Vector3(inputValueX, inputValueY).normalized;
         transform.position += moveDirection * speed * Time.deltaTime;
     }
 
@@ -68,7 +78,6 @@ public class Player : MonoBehaviour
         if(other.CompareTag("Obstacle") && !CheckShieldUp() && !isPlayerinUltimateForm)
         {
             Destroy(gameObject);
-            Debug.Log("Player hit obstacle");
         }
     }
 

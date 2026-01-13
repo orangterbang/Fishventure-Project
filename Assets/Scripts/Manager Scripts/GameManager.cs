@@ -1,4 +1,7 @@
+using System;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +11,9 @@ public class GameManager : MonoBehaviour
     public float gameSpeed;
     public float maxGameSpeed;
     public float gameSpeedBuff;
+    public GameObject playerObject;
+
+    public event Action OnGameLose;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -27,6 +33,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateGameSpeed();
+        UpdateGameReplay();
     }
 
     void OnEnable()
@@ -49,6 +56,21 @@ public class GameManager : MonoBehaviour
         if(Player.Instance.ultimateTimer <= 0)
         {
             gameSpeed = maxGameSpeed;
+        }
+    }
+
+    void UpdateGameReplay()
+    {
+        if (playerObject != null)
+        {
+            return;
+        }
+        
+        OnGameLose?.Invoke();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

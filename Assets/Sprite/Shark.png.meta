@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 589e01584628b864aaf68db92a2e4c0e
+guid: 80f48b727994e1a478a21062a9e0efa4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9034221666657488087
-    second: johnny_automatic_fish_top_view_0
+      213: -8157971102363546176
+    second: 1452372158_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Fish
+      name: shark
       rect:
         serializedVersion: 2
-        x: 184
-        y: 0
-        width: 232
-        height: 598
-      alignment: 9
-      pivot: {x: 0.49602535, y: 0.28104353}
+        x: 7
+        y: 159
+        width: 586
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9233eb0724fff9280800000000000000
-      internalID: -9034221666657488087
+      spriteID: 0cd08b3518019ce80800000000000000
+      internalID: -8157971102363546176
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 97c49febfe344bc448c057ba1c6ffd5c
+    spriteID: 04d0c9c455429f243940358f5996809a
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player_Fish: -9034221666657488087
+      shark: -8157971102363546176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

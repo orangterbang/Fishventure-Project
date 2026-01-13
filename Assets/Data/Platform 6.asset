@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2acf7cc340cf742827c870f3d57d67, type: 3}
+  m_Name: Platform 6
+  m_EditorClassIdentifier: 
+  platform: {fileID: 687233083662643849, guid: cb7db77f3c34571499862f893135b9ca, type: 3}
+  spawnRules:
+  - pointType: 0
+    spawnPrefab: {fileID: 8966836777671804319, guid: e11edf1ab484e3646991f5564926c672, type: 3}
+    spawnChance: 0.627
+  - pointType: 1
+    spawnPrefab: {fileID: 1020265735992179949, guid: e9ac78df7ab6fe1478a1ea7b0cecca82, type: 3}
+    spawnChance: 0.765

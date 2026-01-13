@@ -58,5 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 2
-  maxGameSpeed: 2
+  maxGameSpeed: 1.5
   gameSpeedBuff: 8
+  playerObject: {fileID: 0}
+  replayUI: {fileID: 0}
