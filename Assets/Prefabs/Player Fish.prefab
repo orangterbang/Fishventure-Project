@@ -107,12 +107,11 @@ MonoBehaviour:
   speed: 3
   playerSpeedBuff: 8
   playerSpeedBoostTimer: 2
-  shieldObject: {fileID: 8326698575670041292}
   playerUltimateSizeIncrease: {x: 10, y: 10, z: 10}
   playerOriginSize: {x: 0, y: 0, z: 0}
   ultimateTimer: 0
   ultimateTimerMaxTime: 2
-  ultimateTimeReduceRate: 0.1
+  ultimateTimeReduceRate: 0.5
   isPlayerinUltimateForm: 0
 --- !u!50 &4842161838681290391
 Rigidbody2D:
@@ -207,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &349352444750437790
 Transform:
   m_ObjectHideFlags: 0
@@ -317,8 +316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4a7220751f1384aaa6f2b25ba60698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShieldUp: 0
   shieldTimer: 0
-  shieldTimerReduceRate: 0.1
+  shieldTimerReduceRate: 0.2
   maxShieldTime: 2
 --- !u!95 &2187629633101799260
 Animator:

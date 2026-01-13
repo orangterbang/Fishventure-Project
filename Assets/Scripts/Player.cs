@@ -11,10 +11,11 @@ public class Player : MonoBehaviour
     public float speed = 1.5f;
     private Vector3 playerPosition;
 
-    [Header("Power Up")]
+    [Header("Speed Power Up")]
     public float playerSpeedBuff;
     public float playerSpeedBoostTimer;
-    public GameObject shieldObject;
+
+    [Header("Ultimate Power Up")]
     public Vector3 playerUltimateSizeIncrease;
     [SerializeField]private Vector3 playerOriginSize;
     public float ultimateTimer;
@@ -113,7 +114,7 @@ public class Player : MonoBehaviour
     //Shield PowerUp
     bool CheckShieldUp()
     {
-        return shieldObject.activeSelf;
+        return ShieldManager.Instance.isShieldUp;
     }
 
     //Ultimate PowerUp

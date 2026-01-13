@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     [field: SerializeField] 
     public float gameSpeed;
+    public float gameSpeedMultiplierRate;
     public float maxGameSpeed;
     public float gameSpeedBuff;
     public GameObject playerObject;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     void UltimateBuff()
     {
-        gameSpeed = gameSpeedBuff;
+        gameSpeed = maxGameSpeed + gameSpeedBuff;
     }
 
     void UpdateGameSpeed()
@@ -56,6 +57,8 @@ public class GameManager : MonoBehaviour
         {
             gameSpeed = maxGameSpeed;
         }
+
+        maxGameSpeed += gameSpeedMultiplierRate * Time.deltaTime;
     }
 
     void UpdateGameReplay()

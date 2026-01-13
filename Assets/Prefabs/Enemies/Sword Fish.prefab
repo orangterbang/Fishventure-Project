@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eadca4f8edb392240a0baf8c3b2e64b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 7
+  maxSpeed: 17
   speed: 0
-  offset: -14
+  offset: -27
   warningPath: {fileID: 8598514934248648768}
   movementPoint: {fileID: 8411451732193170925}
 --- !u!60 &4100367321225287145
