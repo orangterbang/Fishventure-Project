@@ -7,6 +7,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     bool isPaused = false;
 
+    void Start()
+    {
+        pauseMenu.SetActive(false);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -15,8 +19,6 @@ public class PauseMenu : MonoBehaviour
             else Pause();
         }
     }
-
-
 
     public void Pause()
     {
@@ -37,5 +39,16 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("menu ui");
         Time.timeScale = 1f;
         
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        isPaused = false;
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

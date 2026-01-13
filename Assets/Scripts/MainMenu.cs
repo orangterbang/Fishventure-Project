@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Che Wan Scene");
+        SceneManager.LoadSceneAsync("Base Scene");
     }
 
     public void HowToPlay()
