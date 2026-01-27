@@ -4,7 +4,7 @@ public class SwordfishMovement : EnemyManager
 {
     void Start()
     {
-        transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+        //transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
     // Update is called once per frame
     protected override void Update()

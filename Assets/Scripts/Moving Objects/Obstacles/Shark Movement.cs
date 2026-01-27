@@ -16,14 +16,15 @@ public class SharkMovement : EnemyManager
         // Random side: true = left, false = right
         bool isSpawnFromRight = transform.position.x > screenRight;
 
-        if (isSpawnFromRight)
+        if (!isSpawnFromRight)
         {
-            direction = -1;
+            direction = 1;
+            
             spriteRenderer.flipX = false;
         }
         else
         {
-            direction = 1;
+            direction = -1;
             warningPath.transform.localPosition *= -1f;
             spriteRenderer.flipX = true;
         }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 2
-  gameSpeedMultiplierRate: 0.1
+  gameSpeedMultiplierRate: 0.03
   maxGameSpeed: 1.5
   gameSpeedBuff: 6
   playerObject: {fileID: 0}

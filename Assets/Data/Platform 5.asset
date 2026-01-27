@@ -19,4 +19,4 @@ MonoBehaviour:
     spawnChance: 0.386
   - pointType: 1
     spawnPrefab: {fileID: 7858554600742687909, guid: bc72ba48b9c23144b8c809ded3bcd6be, type: 3}
-    spawnChance: 0.797
+    spawnChance: 0.7
