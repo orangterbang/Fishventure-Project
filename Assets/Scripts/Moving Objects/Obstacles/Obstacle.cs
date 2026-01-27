@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour
     {
         if(other.CompareTag("Player") && Player.Instance.isPlayerinUltimateForm)
         {
+            ScoreUpdate.Instance.AddScore(500);
             Destroy(gameObject);
         }
     }

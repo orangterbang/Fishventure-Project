@@ -3,6 +3,7 @@ using TMPro;
 
 public class ScoreUpdate : MonoBehaviour
 {
+    public static ScoreUpdate Instance { get; private set;}
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
     [SerializeField] private int score = 0;
@@ -10,9 +11,16 @@ public class ScoreUpdate : MonoBehaviour
 
     bool gameEnd = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        if(Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     // Update is called once per frame
@@ -20,7 +28,7 @@ public class ScoreUpdate : MonoBehaviour
     {
         if (!gameEnd)
         {
-            AddScore();
+            UpdateScore();
         }
         else
         {
@@ -43,7 +51,7 @@ public class ScoreUpdate : MonoBehaviour
         gameEnd = true;
     }
 
-    void AddScore()
+    void UpdateScore()
     {
         score += 1 + (int)(scoreMultiplier * Time.deltaTime);
         
@@ -51,6 +59,11 @@ public class ScoreUpdate : MonoBehaviour
         {
             scoreText.text = "Score : " + score;
         }
+    }
+
+    public void AddScore(int scoreAdd)
+    {
+        score += scoreAdd;
     }
 
     void SetFinalScore()

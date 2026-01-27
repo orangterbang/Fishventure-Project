@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Obstacle
 {
     private float initialSpeed = 0f;
     [SerializeField] private float maxSpeed;

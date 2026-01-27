@@ -725,6 +725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Fish
       objectReference: {fileID: 0}
+    - target: {fileID: 5364499450453935481, guid: 04eca1a3629bed540b3a8396f29a8514, type: 3}
+      propertyPath: playerSpeedBoostTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9136603808909027436, guid: 04eca1a3629bed540b3a8396f29a8514, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
