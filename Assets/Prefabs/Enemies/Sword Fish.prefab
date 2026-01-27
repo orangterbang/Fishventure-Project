@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5189710335943555146}
   - component: {fileID: 6243520254490772653}
   - component: {fileID: 4100367321225287145}
+  - component: {fileID: 931923954582880491}
   m_Layer: 0
   m_Name: Sword Fish
   m_TagString: Obstacle
@@ -113,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4176586062778117154, guid: 91fa2bf362604dc4ebca3ee6c49be4c7, type: 3}
+  m_Sprite: {fileID: -2048143689584614505, guid: 5c01da6b8ddff5d449c824e5877f155d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,7 +206,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 1.84}
+    oldSize: {x: 4.71, y: 2.33}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -295,6 +296,28 @@ PolygonCollider2D:
       - {x: 0.28, y: -0.69}
       - {x: 0.35, y: -0.58}
   m_UseDelaunayMesh: 0
+--- !u!95 &931923954582880491
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020265735992179949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c133708d7ad3e34cacd9046f3de6697, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8598514934248648768
 GameObject:
   m_ObjectHideFlags: 0
