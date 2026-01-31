@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,8 +7,12 @@ public class GameManager : MonoBehaviour
 
     [field: SerializeField] 
     public float gameSpeed;
+    public float gameSpeedMultiplierRate;
     public float maxGameSpeed;
     public float gameSpeedBuff;
+    public GameObject playerObject;
+
+    public static event Action OnGameLose;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -19,14 +24,16 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
+
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateGameSpeed();
+        UpdateGameReplay();
     }
 
     void OnEnable()
@@ -41,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     void UltimateBuff()
     {
-        gameSpeed = gameSpeedBuff;
+        gameSpeed = maxGameSpeed + gameSpeedBuff;
     }
 
     void UpdateGameSpeed()
@@ -50,5 +57,17 @@ public class GameManager : MonoBehaviour
         {
             gameSpeed = maxGameSpeed;
         }
+
+        maxGameSpeed += gameSpeedMultiplierRate * Time.deltaTime;
+    }
+
+    void UpdateGameReplay()
+    {
+        if (playerObject != null)
+        {
+            return;
+        }
+        
+        OnGameLose?.Invoke();
     }
 }

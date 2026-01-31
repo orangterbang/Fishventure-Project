@@ -17,7 +17,6 @@ public class GameBoundary : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 

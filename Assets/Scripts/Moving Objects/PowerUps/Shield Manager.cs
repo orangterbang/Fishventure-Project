@@ -7,6 +7,7 @@ public class ShieldManager : MonoBehaviour
     private Animator animator;
 
     private bool playerHitObstacle;
+    public bool isShieldUp = false;
 
     public float shieldTimer;
     public float shieldTimerReduceRate;
@@ -22,8 +23,6 @@ public class ShieldManager : MonoBehaviour
         {
             Instance = this;
         }
-
-        ShieldPowerUp.OnShieldPickUp += ActivateShield;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -71,18 +70,29 @@ public class ShieldManager : MonoBehaviour
 
     void ActivateShield()
     {
-        gameObject.SetActive(true);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        gameObject.GetComponent<Animator>().enabled = true;
         shieldTimer = maxShieldTime;
         playerHitObstacle = false;
+        isShieldUp = true;
     }
 
     void DeactivateShield()
     {
-        gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<Animator>().enabled = false;
         playerHitObstacle = false;
+        isShieldUp = false;
     }
 
-    void OnDestroy()
+    void OnEnable()
+    {
+        ShieldPowerUp.OnShieldPickUp += ActivateShield;
+    }
+
+    void OnDisable()
     {
         ShieldPowerUp.OnShieldPickUp -= ActivateShield;
     }
