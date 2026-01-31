@@ -43,12 +43,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Replay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
         isPaused = false;
+        pauseMenu.SetActive(false);
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Use bubble transition if available
+        if (BubbleScene.Instance != null)
+            BubbleScene.Instance.StartTransition(SceneManager.GetActiveScene().name); // or use scene name
+        else
+            SceneManager.LoadScene(currentIndex);
     }
 }

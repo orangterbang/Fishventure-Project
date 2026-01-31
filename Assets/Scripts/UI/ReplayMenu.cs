@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class ReplayMenu : MonoBehaviour
 {
     [SerializeField] GameObject replayMenu;
+    [SerializeField] AudioSource sfxSource;
+    [SerializeField] AudioClip gameOverClip;
     bool gameEnd = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,7 +36,15 @@ public class ReplayMenu : MonoBehaviour
 
     void SetReplayUI()
     {
+        if (gameEnd) return;
         gameEnd = true;
+
+        if (sfxSource != null && gameOverClip != null)
+        {
+            sfxSource.PlayOneShot(gameOverClip);
+        }
+
+
         Time.timeScale = 0;
     }
 

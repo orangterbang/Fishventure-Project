@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Base Scene");
+        BubbleScene.Instance.StartTransition("Base Scene");
     }
 
     public void HowToPlay()
