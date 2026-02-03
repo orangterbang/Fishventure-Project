@@ -76,6 +76,7 @@ public class ShieldManager : MonoBehaviour
         shieldTimer = maxShieldTime;
         playerHitObstacle = false;
         isShieldUp = true;
+        animator.SetBool("isDestroyed", playerHitObstacle);
     }
 
     void DeactivateShield()

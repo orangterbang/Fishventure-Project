@@ -6,8 +6,12 @@ public class ScoreUpdate : MonoBehaviour
     public static ScoreUpdate Instance { get; private set;}
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
+    public TMP_Text bestScoreText;
     [SerializeField] private int score = 0;
     [SerializeField] private float scoreMultiplier = 1.5f;
+    [SerializeField] private int highestScore;
+
+    private const string HighScoreKey = "HighScore";
 
     bool gameEnd = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +25,12 @@ public class ScoreUpdate : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    void Start()
+    {
+        highestScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+        score = 0;
     }
 
     // Update is called once per frame
@@ -68,8 +78,21 @@ public class ScoreUpdate : MonoBehaviour
 
     void SetFinalScore()
     {
+        CheckforHighScore();
+
         scoreText.text = "";
 
         finalScoreText.text = "Final Score: " + score;
+        bestScoreText.text = "Best Score: " + highestScore;
+    }
+
+    void CheckforHighScore()
+    {
+        if(score > highestScore)
+        {
+            highestScore = score;
+            PlayerPrefs.SetInt(HighScoreKey, highestScore);
+            PlayerPrefs.Save();
+        }
     }
 }

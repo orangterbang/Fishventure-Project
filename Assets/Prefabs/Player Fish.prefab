@@ -107,7 +107,7 @@ MonoBehaviour:
   maxSpeed: 3
   speed: 3
   playerSpeedBuff: 8
-  playerSpeedBoostTimer: 2
+  playerSpeedBoostTimer: 0.5
   playerUltimateSizeIncrease: {x: 10, y: 10, z: 10}
   playerOriginSize: {x: 0, y: 0, z: 0}
   ultimateTimer: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   isShieldUp: 0
   shieldTimer: 0
   shieldTimerReduceRate: 0.2
-  maxShieldTime: 2
+  maxShieldTime: 3
 --- !u!95 &2187629633101799260
 Animator:
   serializedVersion: 7
